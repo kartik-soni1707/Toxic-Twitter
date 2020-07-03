@@ -6,10 +6,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 from sklearn.naive_bayes import MultinomialNB as clf1 
 
-df=pd.read_csv("reviews.csv",encoding='latin-1')
+df=pd.read_csv("ab1.csv",encoding='latin-1')
 vect=CountVectorizer()
 x=df.iloc[:,1]
-y=df.iloc[:,-2:]
+y=df.iloc[:,2:-1]
 X=vect.fit_transform(x)
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
